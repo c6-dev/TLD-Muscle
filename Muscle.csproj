@@ -29,7 +29,7 @@
     <!--This tells the compiler where to look for assemblies. Don't change it.-->
     <PropertyGroup>
         <!--This needs to be changed for the mod to compile.-->
-        <TheLongDarkPath>..\..\</TheLongDarkPath>
+        <TheLongDarkPath>C:\Games\Steam\steamapps\common\TheLongDark</TheLongDarkPath>
         <MelonLoaderPath>$(TheLongDarkPath)/MelonLoader/net6</MelonLoaderPath>
         <ManagedPath>$(TheLongDarkPath)/MelonLoader/Managed</ManagedPath>
         <Il2CppPath>$(TheLongDarkPath)/MelonLoader/Il2CppAssemblies</Il2CppPath>

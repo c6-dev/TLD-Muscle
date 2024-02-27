@@ -8,7 +8,6 @@ using MelonLoader;
 using MelonLoader.TinyJSON;
 using ModData;
 using UnityEngine;
-using FiligranisSkills;
 using Il2CppTLD.News;
 
 namespace Muscle
@@ -208,7 +207,8 @@ namespace Muscle
 				if (slept24hrs <= 2 || eatenSince < requiredEaten2 || GameManager.m_Condition.GetConditionLevel() >= ConditionLevel.NearDeath)
 					impact -= 0.02f * (passedHours/22f);
 				Muscle.Instance.Logger?.Msg($"------Muscle reduced: {impact * Settings.options.reductionScale}kg...");
-			}
+                HUDMessage.AddMessageFadeIn("You feel weaker.", 5f);
+            }
 			if (impact != 0)
 			{
 				ClearMuscle();
@@ -218,7 +218,7 @@ namespace Muscle
 			ModData.LastCaloriesBurned_Losing = GameManager.m_PlayerGameStats.m_CaloriesBurned;
 			ModData.LastCaloriesEaten_Losing = GameManager.m_PlayerGameStats.m_CaloriesEaten;
 			ModData.LastLosingTime = Moment.Moment.Now;
-		}
+        }
     }
 
     internal class MuscleData
@@ -321,7 +321,7 @@ namespace Muscle
 				else impact += 0.01f * scale;
 			}
 			MelonLogger.Msg($"------Growing { impact }kg...");
-
+			HUDMessage.AddMessageFadeIn("You feel stronger.", 5f);
 			Muscle.Instance.ClearMuscle();
 
 			Muscle.Instance.ModData.AppliedCarryWeight += impact;
