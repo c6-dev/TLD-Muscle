@@ -1,3 +1,5 @@
+This fork adds HUD messages that indicate muscle growth/decay.
+
 # Muscle
 
 Eat well, move a lot, and properly sleep, then you will gain muscle.
